@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+  min-height: 100dvh;
+}
+
+/* ----- CHECKBOX 1 STYLING ----- */
+
+.wrapper1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+}
+
+.wrapper1:hover input {
+  background-color: lightgray;
+}
+
+.wrapper1 input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  background-color: white;
+  transition: background-color 0.4s;
+  appearance: none;
+  cursor: pointer;
+}
+
+.wrapper1 input:checked {
+  background-color: green;
+}
+
+.wrapper1 input::after {
+  content: "";
+  display: none;
+  width: 50%;
+  height: 30%;
+  border-left: 5px solid white;
+  border-bottom: 5px solid white;
+  transform: translateY(-25%) rotateZ(-45deg);
+}
+
+.wrapper1 input:checked::after {
+  display: block;
+}
+
+.wrapper1 label {
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ----- CHECKBOX 2 STYLING ----- */
+
+.wrapper2 input {
+  position: relative;
+  width: 110px;
+  height: 50px;
+  border-radius: 100px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.5s;
+  appearance: none;
+  cursor: pointer;
+}
+
+.wrapper2 input:checked {
+  background-color: dodgerblue;
+}
+
+.wrapper2 input:checked::after {
+  left: calc(100% - 50px);
+}
+
+.wrapper2 input::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  transition: left 0.5s;
+}
+
+/* ----- CHECKBOX 3 STYLING ----- */
+
+.wrapper3 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.wrapper3 input {
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 7px 10px rgba(0, 0, 0, 0.2);
+  transition: outline 0.4s, box-shadow 0.4s;
+  appearance: none;
+  cursor: pointer;
+}
+
+.wrapper3 input:checked {
+  outline: 3px solid aqua;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.4),
+    0 7px 10px rgba(0, 255, 255, 0.4), 0 7px 15px rgba(0, 255, 255, 0.4);
+}
+
+.wrapper3 input:checked + .fa-power-off {
+  color: aqua;
+}
+
+.wrapper3 .fa-power-off {
+  position: absolute;
+  z-index: 50;
+  font-size: 3rem;
+  color: lightgray;
+  transition: color 0.4s;
+}
